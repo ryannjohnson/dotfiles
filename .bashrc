@@ -12,3 +12,5 @@ alias lynx='lynx -cfg=~/.lynx.cfg'
 # For gpg-agent ssh authentication
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 export GPG_TTY=$(/usr/bin/tty)
+# gotcha: run `gpg-connect-agent updatestartuptty /bye` if using a
+# Yubikey with pinentry.
