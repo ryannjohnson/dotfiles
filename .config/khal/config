@@ -1,0 +1,20 @@
+[calendars]
+
+[[Personal]]
+path = ~/.local/share/calendars/ryanryannjohnsoncom
+color = dark blue
+
+[default]
+default_calendar = Personal
+highlight_event_days = True
+show_all_days = True
+timedelta = 5d
+
+[locale]
+dateformat = %Y-%m-%d
+datetimeformat = %Y-%m-%dT%H:%M
+default_timezone = America/Los_Angeles
+local_timezone = America/Los_Angeles
+longdatetimeformat = %Y-%m-%dT%H:%M
+longdateformat = %Y-%m-%d
+firstweekday = 6
