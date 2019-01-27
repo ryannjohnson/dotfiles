@@ -1,0 +1,17 @@
+# Change the volume with the keyboard
+bindsym XF86AudioLowerVolume exec volume_down
+bindsym XF86AudioRaiseVolume exec volume_up
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+# Change the monitor brightness
+bindsym XF86MonBrightnessUp exec brightness+
+bindsym XF86MonBrightnessDown exec brightness-
+
+# Take screenshots
+bindsym --release Print exec scrot -m -e 'mv $f ~/Pictures/'
+bindsym --release Shift+Print exec scrot -s -e 'mv $f ~/Pictures/'
+
+# Start compton to fix screen tearing
+#exec_always compton -f --config ~/.config/compton.conf
+exec --no-startup-id feh --bg-center ~/.fehbg.jpg
+exec --no-startup-id volumeicon
