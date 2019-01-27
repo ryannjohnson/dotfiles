@@ -1,3 +1,5 @@
+# Use `xev` or `xmodmap -pk` to get keyboard codes
+
 # Change the volume with the keyboard
 bindsym XF86AudioLowerVolume exec volume_down
 bindsym XF86AudioRaiseVolume exec volume_up
