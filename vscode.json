@@ -1,14 +1,17 @@
 {
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.acceptSuggestionOnEnter": "off",
-    "editor.autoClosingBrackets": false,
+    "editor.autoClosingBrackets": "never",
     "editor.autoIndent": false,
     "editor.quickSuggestions": {
         "other": false,
         "comments": false,
         "strings": false
     },
+    "editor.autoClosingQuotes": "never",
+    "editor.fontSize": 12,
     "editor.renderIndentGuides": false,
+    "editor.renderWhitespace": "boundary",
     "editor.rulers": [80],
     "extensions.ignoreRecommendations": true,
     "files.eol": "\n",
