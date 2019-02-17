@@ -1,0 +1,17 @@
+set ssl_starttls=yes
+set ssl_force_tls=yes
+set imap_user = 'user@domain.tld'
+set imap_pass = ''
+set from = 'user@domain.tld'
+set realname = 'John Smith'
+set folder = 'imaps://mail.domain.tld/'
+set spoolfile = 'imaps://mail.domain.tld/INBOX'
+set postponed = 'imaps://mail.domain.tld/Drafts'
+set record = 'imaps://mail.domain.tld/Sent'
+set header_cache = '~/.mutt/cache/headers'
+set message_cachedir = '~/.mutt/cache/bodies'
+set certificate_file = '~/.mutt/certificates'
+set smtp_url = 'smtp://user@domain.tld@mail.domain.tld:587/'
+set smtp_pass = "$imap_pass"
+set move = no
+set imap_keepalive = 900
