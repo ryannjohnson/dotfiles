@@ -20,19 +20,25 @@ order += "load"
 order += "tztime local"
 order += "volume master"
 
+ipv6 {
+        format_up = "IPv6: %ip"
+        format_down = ""
+}
+
 wireless _first_ {
         format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
+        format_down = ""
 }
 
 ethernet _first_ {
         # if you use %speed, i3status requires root privileges
         format_up = "E: %ip (%speed)"
-        format_down = "E: down"
+        format_down = ""
 }
 
 battery all {
         format = "%status %percentage %remaining"
+        format_down = ""
 }
 
 tztime local {
@@ -46,7 +52,6 @@ load {
 disk "/" {
         format = "%avail"
 }
-
 
 volume master {
         format = "♪: %volume"
