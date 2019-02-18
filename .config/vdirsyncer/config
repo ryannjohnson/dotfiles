@@ -14,6 +14,23 @@ fileext = ".ics"
 
 [storage my_calendars_remote]
 type = "caldav"
-url = "https://url.to/webdav/"
+url = "https://url.to/dav/"
+username = "username"
+password = "password"
+
+[pair my_contacts]
+a = "my_contacts_local"
+b = "my_contacts_remote"
+collections = ["from a", "from b"]
+conflict_resolution = ["command", "vimdiff"]
+
+[storage my_contacts_local]
+type = "filesystem"
+path = "~/.local/share/contacts"
+fileext = ".vcf"
+
+[storage my_contacts_remote]
+type = "carddav"
+url = "https://url.to/dav/"
 username = "username"
 password = "password"

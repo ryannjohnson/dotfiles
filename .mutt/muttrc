@@ -15,3 +15,10 @@ set smtp_url = 'smtp://user@domain.tld@mail.domain.tld:587/'
 set smtp_pass = "$imap_pass"
 set move = no
 set imap_keepalive = 900
+
+set query_command= "khard email --parsable %s"
+bind editor <Tab> complete-query
+bind editor ^T complete
+macro index,pager A \
+    "<pipe-message>khard add-email<return>" \
+    "add the sender email address to khard"
