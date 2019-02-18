@@ -1,0 +1,37 @@
+# https://superuser.com/a/630048/755149
+#
+# Find your card with
+#
+# $ cat /proc/asound/cards
+#
+# To get valid ALSA card names, use aplay:
+#
+# $ aplay -l | awk -F \: '/,/{print $2}' | awk '{print $1}' | uniq
+#
+# and then create /etc/asound.conf with following:
+#
+# pcm.!default {
+#     type hw
+#     card 1
+# }
+#
+# ctl.!default {
+#     type hw
+#     card 1
+# }
+#
+# Replace "card 1" with the number or name of your card determined above.
+#
+# Alternatively, you can change ordering of your cards so your USB card
+# will be card 0 and it will work without editing asound.conf.
+
+
+pcm.!default {
+    type hw
+    card SB
+}
+
+ctl.!default {
+    type hw
+    card SB
+}
