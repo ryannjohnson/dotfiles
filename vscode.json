@@ -27,6 +27,7 @@
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
   "typescript.autoClosingTags": false,
   "typescript.updateImportsOnFileMove.enabled": "never",
+  "window.menuBarVisibility": "toggle",
   "window.zoomLevel": 0,
   "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Monokai",
@@ -42,4 +43,5 @@
     "editor.tabSize": 2,
     "editor.formatOnSave": true
   },
+  "zenMode.hideStatusBar": false
 }
