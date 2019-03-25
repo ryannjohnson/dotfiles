@@ -28,12 +28,14 @@
   "typescript.autoClosingTags": false,
   "typescript.updateImportsOnFileMove.enabled": "never",
   "window.menuBarVisibility": "toggle",
+  "window.titleBarStyle": "custom",
   "window.zoomLevel": 0,
   "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Monokai",
   "workbench.editor.labelFormat": "medium",
   "workbench.startupEditor": "none",
   "zenMode.hideLineNumbers": false,
+  "zenMode.hideStatusBar": false,
   "[markdown]": {
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 80,
@@ -42,6 +44,5 @@
   "[typescript]": {
     "editor.tabSize": 2,
     "editor.formatOnSave": true
-  },
-  "zenMode.hideStatusBar": false
+  }
 }
