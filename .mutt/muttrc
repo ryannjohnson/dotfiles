@@ -22,3 +22,5 @@ bind editor ^T complete
 macro index,pager A \
     "<pipe-message>khard add-email<return>" \
     "add the sender email address to khard"
+
+set editor="vim -c 'set tw=72'"
