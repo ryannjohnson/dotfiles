@@ -9,6 +9,10 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 bindsym XF86MonBrightnessUp exec brightness+
 bindsym XF86MonBrightnessDown exec brightness-
 
+# Screen locking
+bindsym $mod+Shift+a exec i3lock -c "#000000"
+bindsym $mod+Shift+Delete exec "i3lock -c '#000000'; systemctl suspend"
+
 # Take screenshots
 bindsym --release Print exec scrot -m -e 'mv $f ~/Pictures/'
 bindsym --release Shift+Print exec scrot -s -e 'mv $f ~/Pictures/'
