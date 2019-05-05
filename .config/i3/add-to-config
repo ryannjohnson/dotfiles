@@ -1,5 +1,8 @@
 # Use `xev` or `xmodmap -pk` to get keyboard codes
 
+# Custom font
+font pango:Ubuntu Monospace Regular 8
+
 # Change the volume with the keyboard
 bindsym XF86AudioLowerVolume exec volume_down
 bindsym XF86AudioRaiseVolume exec volume_up
