@@ -22,4 +22,4 @@ bindsym --release Shift+Print exec scrot -s -e 'mv $f ~/Pictures/'
 
 # Start compton to fix screen tearing
 #exec_always compton -f --config ~/.config/compton.conf
-exec --no-startup-id feh --bg-center ~/.fehbg.jpg
+exec --no-startup-id feh --bg-fill ~/.fehbg.jpg
