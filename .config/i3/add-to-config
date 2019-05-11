@@ -4,8 +4,8 @@
 font pango:Ubuntu Monospace Regular 8
 
 # Custom colors
-client.focused "#424242" "#323232" "#ffffff" "#535353" "#212121"
-client.focused_inactive "#424242" "#323232" "#888888" "#535353" "#212121"
+client.focused "#555555" "#333333" "#ffffff" "#555555" "#222222"
+client.focused_inactive "#333333" "#333333" "#888888" "#444444" "#222222"
 
 # Change the volume with the keyboard
 bindsym XF86AudioLowerVolume exec volume_down
