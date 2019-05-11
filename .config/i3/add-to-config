@@ -9,6 +9,7 @@ bindsym XF86AudioRaiseVolume exec volume_up
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # Change the monitor brightness
+# https://github.com/jappeace/brightnessctl
 bindsym XF86MonBrightnessUp exec brightness+
 bindsym XF86MonBrightnessDown exec brightness-
 
