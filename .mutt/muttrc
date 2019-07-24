@@ -16,6 +16,8 @@ set smtp_pass = "$imap_pass"
 set move = no
 set imap_keepalive = 900
 
+bind index G imap-fetch-mail
+
 set query_command= "khard email --parsable %s"
 bind editor <Tab> complete-query
 bind editor ^T complete
