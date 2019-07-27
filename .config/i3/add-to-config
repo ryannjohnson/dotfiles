@@ -18,7 +18,7 @@ bindsym XF86MonBrightnessUp exec brightness+
 bindsym XF86MonBrightnessDown exec brightness-
 
 # Screen locking
-bindsym $mod+Shift+a exec i3lock -c "#000000"
+bindsym $mod+Shift+a exec "i3lock -c '#000000'; xset -display :0.0 dpms force off"
 bindsym $mod+Shift+Delete exec "i3lock -c '#000000'; systemctl suspend"
 
 # Take screenshots
