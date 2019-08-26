@@ -24,6 +24,7 @@ bindsym $mod+Shift+Delete exec "i3lock -c '#000000'; systemctl suspend"
 # Take screenshots
 bindsym --release Print exec scrot -m -e 'mv $f ~/Pictures/'
 bindsym --release Shift+Print exec scrot -s -e 'mv $f ~/Pictures/'
+bindsym --release Ctrl+Print exec scrot -u -e 'mv $f ~/Pictures/'
 
 # Start compton to fix screen tearing
 #exec_always compton -f --config ~/.config/compton.conf
