@@ -24,6 +24,12 @@
 #
 # Alternatively, you can change ordering of your cards so your USB card
 # will be card 0 and it will work without editing asound.conf.
+#
+# https://askubuntu.com/a/230893/713087
+#
+# Restart pulseaudio and alsa to make changes take effect:
+#
+# $ pulseaudio -k && sudo alsa force-reload
 
 
 pcm.!default {
