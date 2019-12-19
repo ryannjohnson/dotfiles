@@ -3,6 +3,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# Make ls use colors
+export CLICOLOR=1
+
 # Show the directory in the prompt
 PS1='$(whoami)@$(hostname):\w\$ '
 
