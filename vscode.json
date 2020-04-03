@@ -15,6 +15,7 @@
   "editor.renderIndentGuides": false,
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [80],
+  "editor.semanticHighlighting.enabled": false,
   "extensions.ignoreRecommendations": true,
   "files.eol": "\n",
   "files.insertFinalNewline": true,
