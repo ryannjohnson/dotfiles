@@ -58,7 +58,7 @@
       :hook 
       (after-init . org-roam-mode)
       :custom
-      (org-roam-directory "~/org/")
+      (org-roam-directory org-directory)
       :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n f" . org-roam-find-file)
@@ -75,3 +75,13 @@
              :file-name "${slug}"
              :head "#+TITLE: ${title}\n"
              :unnarrowed t)))
+
+;; Useful for taking "fleeting" notes.
+(use-package org-journal
+  :bind
+  ("C-c n j" . org-journal-new-entry)
+  :custom
+  (org-journal-date-prefix "#+TITLE: ")
+  (org-journal-file-format "journal_%Y-%m-%d.org")
+  (org-journal-dir org-directory)
+  (org-journal-date-format "Journal %Y-%m-%d, %a"))
