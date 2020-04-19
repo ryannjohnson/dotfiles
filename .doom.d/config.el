@@ -52,6 +52,9 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
+;; Automatically wrap paragraphs at the default line length (80 chars),
+;; inserting newlines while I type.
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 ;; Included here to update the org-roam-directory.
 (use-package org-roam
