@@ -82,6 +82,6 @@
   ("C-c n j" . org-journal-new-entry)
   :custom
   (org-journal-date-prefix "#+TITLE: ")
-  (org-journal-file-format "journal_%Y-%m-%d.org")
+  (org-journal-file-format "%Y-%m-%d.org")
   (org-journal-dir org-directory)
-  (org-journal-date-format "Journal %Y-%m-%d"))
+  (org-journal-date-format "%Y-%m-%d"))
