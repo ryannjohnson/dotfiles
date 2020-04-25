@@ -1,8 +1,0 @@
-#/bin/sh
-
-amixer -q set Master 5%+ unmute
-amixer -q set Speaker unmute
-amixer -q set Headphone unmute
-amixer set Speaker on
-amixer set Headphone on
-
