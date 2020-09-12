@@ -54,7 +54,7 @@
 
 ;; Make org-journal and other time-tracking tools use my local time instead of
 ;; my computer time.
-(set-time-zone-rule "America/Los_Angeles")
+(set-time-zone-rule "America/New_York")
 
 ;; Automatically wrap paragraphs at the default line length (80 chars),
 ;; inserting newlines while I type.
