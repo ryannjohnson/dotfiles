@@ -56,10 +56,6 @@
 ;; my computer time.
 (set-time-zone-rule "America/New_York")
 
-;; Automatically wrap paragraphs at the default line length (80 chars),
-;; inserting newlines while I type.
-(add-hook 'org-mode-hook 'turn-on-auto-fill)
-
 ;; Included here to update the org-roam-directory.
 (use-package org-roam
       :hook 
