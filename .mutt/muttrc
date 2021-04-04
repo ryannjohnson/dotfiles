@@ -27,4 +27,4 @@ macro index,pager A \
 
 set editor="vim -c 'set tw=65 nojoinspaces'"
 
-send-hook . set signature="~/.mutt/sig
+send-hook . set signature="~/.mutt/sig"
