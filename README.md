@@ -45,3 +45,11 @@ sudo modprobe btusb
 Sources:
 - <https://www.nielsvandermolen.com/bluetooth-headphones-ubuntu/>
 - <https://ubuntuforums.org/showthread.php?t=2298368>
+
+## NVIDIA Graphics Card
+
+Download the latest driver from <https://www.nvidia.com/>.
+
+1. Run `nvidia-settings`.
+2. Enable "Force Full Composition Pipeline".
+3. Press "Save to X Configuration File".
