@@ -8,7 +8,6 @@ Programs and configs for my POSIX environment.
 * <https://github.com/hlissner/doom-emacs>
   * <https://github.com/jethrokuan/org-roam>
 * <https://github.com/jappeace/brightnessctl>
-* <https://int10h.org/oldschool-pc-fonts/fontlist/font?ibm_vga_8x16>
 
 ## Bluetooth headphones
 
