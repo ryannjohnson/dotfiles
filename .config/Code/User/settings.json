@@ -52,6 +52,15 @@
   },
   "[typescript]": {
     "editor.tabSize": 2,
-    "editor.formatOnSave": true
-  }
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "go.useLanguageServer": true,
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.typeCheckingMode": "basic"
 }
