@@ -34,6 +34,8 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+;; This prevents the org-roam-v2 message from showing during startup every time.
+(setq org-roam-v2-ack t)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -58,33 +60,20 @@
 
 ;; Included here to update the org-roam-directory.
 (use-package org-roam
-      :hook 
-      (after-init . org-roam-mode)
-      :custom
-      (org-roam-directory org-directory)
-      :bind (:map org-roam-mode-map
-              (("C-c n l" . org-roam)
-               ("C-c n f" . org-roam-find-file)
-               ("C-c n b" . org-roam-switch-to-buffer)
-               ("C-c n g" . org-roam-graph-show))
-              :map org-mode-map
-              (("C-c n i" . org-roam-insert))))
-
-;; Included here so that the file name doesn't have a timestamp in it.
-;; https://github.com/jethrokuan/org-roam/issues/298#issuecomment-601722596
-(setq org-roam-capture-templates
-        '(("d" "default" plain (function org-roam--capture-get-point)
-             "%?"
-             :file-name "${slug}"
-             :head "#+TITLE: ${title}\n"
-             :unnarrowed t)))
-
-;; Useful for taking "fleeting" notes.
-(use-package org-journal
-  :bind
-  ("C-c n j" . org-journal-new-entry)
-  :custom
-  (org-journal-date-prefix "#+TITLE: ")
-  (org-journal-file-format "%Y-%m-%d.org")
-  (org-journal-dir org-directory)
-  (org-journal-date-format "%Y-%m-%d"))
+    :after org
+    :init (setq org-roam-v2-ack t) ;; Acknowledge V2 upgrade
+    :custom
+    (org-roam-directory (file-truename org-directory))
+    :config
+    (org-roam-setup)
+    :bind (("C-c n f" . org-roam-node-find)
+           ("C-c n g" . org-roam-graph)
+           ("C-c n r" . org-roam-node-random)
+           ("C-c n j" . org-roam-dailies-capture-today)
+           ("C-c n t" . org-roam-dailies-goto-today)
+           (:map org-mode-map
+                 (("C-c n i" . org-roam-node-insert)
+                  ("C-c n o" . org-id-get-create)
+                  ("C-c n t" . org-roam-tag-add)
+                  ("C-c n a" . org-roam-alias-add)
+                  ("C-c n l" . org-roam-buffer-toggle)))))
