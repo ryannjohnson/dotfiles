@@ -37,7 +37,6 @@
   "typescript.updateImportsOnFileMove.enabled": "never",
   "window.menuBarVisibility": "toggle",
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 0,
   "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Monokai",
   "workbench.editor.labelFormat": "medium",
@@ -62,5 +61,12 @@
   },
   "go.useLanguageServer": true,
   "python.analysis.diagnosticMode": "workspace",
-  "python.analysis.typeCheckingMode": "basic"
+  "python.analysis.typeCheckingMode": "basic",
+  "editor.copyWithSyntaxHighlighting": false,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "workbench.editor.languageDetection": false,
+  "go.coverOnTestPackage": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }
