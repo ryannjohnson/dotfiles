@@ -1,0 +1,13 @@
+# https://wiki.archlinux.org/title/Wacom_tablet#Running_xsetwacom_via_udev_and_systemd_service
+
+[Unit]
+Description=Configure my Wacom tablet
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/env bash -c "sleep 2; export DISPLAY=:0; bash ${HOME}/.local/bin/xsetwacomautofit.sh"
+
+[Install]
+WantedBy=graphical-session.target
