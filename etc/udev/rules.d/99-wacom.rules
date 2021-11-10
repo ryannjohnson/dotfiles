@@ -1,2 +1,2 @@
 # https://wiki.archlinux.org/title/Wacom_tablet#Running_xsetwacom_via_udev_and_systemd_service
-ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="056a", TAG+="systemd", ENV{SYSTEMD_USER_WANTS}+="wacom.service"
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="056a", TAG+="systemd", ENV{SYSTEMD_WANTS}+="wacom.service"

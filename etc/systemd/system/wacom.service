@@ -1,0 +1,18 @@
+# https://wiki.archlinux.org/title/Wacom_tablet#Running_xsetwacom_via_udev_and_systemd_service
+
+[Unit]
+Description=Configure my Wacom tablet
+After=graphical-session.target suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
+PartOf=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/env bash -c "sleep 2; bash ${HOME}/.local/bin/xsetwacomautofit.sh"
+# Update variables below.
+#
+# TODO: Figure out a way to get these out of system config and into user config.
+User=
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=graphical-session.target suspend.target hibernate.target hybrid-sleep.target suspend-then-hibernate.target
