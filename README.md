@@ -58,4 +58,5 @@ Download the latest driver from <https://www.nvidia.com/>.
 
 ```bash
 sudo apt remove unattended-upgrades
+sudo dpkg-reconfigure console-setup
 ```
