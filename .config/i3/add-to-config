@@ -3,6 +3,9 @@
 # Custom font
 font pango:Ubuntu Monospace Regular 8
 
+# Don't ask before exiting i3.
+bindsym $mod+Shift+e exec i3-msg exit
+
 # Custom colors
 client.focused "#333333" "#444444" "#ffffff" "#555555" "#333333"
 client.focused_inactive "#333333" "#333333" "#888888" "#444444" "#222222"
