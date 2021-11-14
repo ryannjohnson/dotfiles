@@ -53,3 +53,9 @@ Download the latest driver from <https://www.nvidia.com/>.
 1. Run `nvidia-settings`.
 2. Enable "Force Full Composition Pipeline".
 3. Press "Save to X Configuration File".
+
+## Misc configuration
+
+```bash
+sudo apt remove unattended-upgrades
+```
