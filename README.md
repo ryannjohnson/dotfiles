@@ -62,8 +62,9 @@ sudo dpkg-reconfigure console-setup
 sudo apt install dict-gcide
 ```
 
-To prevent Blender crashes on Intel integrated gpu:
+To prevent crashes on Intel integrated gpu:
 
 ```bash
-echo "MESA_LOADER_DRIVER_OVERRIDE=i965" >> .profile
+MESA_LOADER_DRIVER_OVERRIDE=i965 blender
+MESA_LOADER_DRIVER_OVERRIDE=i965 DRI_PRIME=0 godot
 ```
