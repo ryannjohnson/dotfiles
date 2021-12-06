@@ -5,9 +5,32 @@ Programs and configs for my POSIX environment.
 ## Additional packages
 
 * <https://github.com/drduh/YubiKey-Guide>
-* <https://github.com/hlissner/doom-emacs>
-  * <https://github.com/jethrokuan/org-roam>
 * <https://github.com/jappeace/brightnessctl>
+
+## Misc configuration
+
+```bash
+sudo dpkg-reconfigure console-setup
+sudo apt install dict-gcide
+sudo apt remove unattended-upgrades
+```
+
+## NVIDIA dedicated graphics
+
+Download the latest driver from <https://www.nvidia.com/>.
+
+1. Run `nvidia-settings`.
+2. Enable "Force Full Composition Pipeline".
+3. Press "Save to X Configuration File".
+
+## Intel integrated graphics
+
+To prevent crashes:
+
+```bash
+MESA_LOADER_DRIVER_OVERRIDE=i965 blender
+MESA_LOADER_DRIVER_OVERRIDE=i965 DRI_PRIME=0 godot
+```
 
 ## Bluetooth headphones
 
@@ -45,26 +68,3 @@ sudo modprobe btusb
 Sources:
 - <https://www.nielsvandermolen.com/bluetooth-headphones-ubuntu/>
 - <https://ubuntuforums.org/showthread.php?t=2298368>
-
-## NVIDIA Graphics Card
-
-Download the latest driver from <https://www.nvidia.com/>.
-
-1. Run `nvidia-settings`.
-2. Enable "Force Full Composition Pipeline".
-3. Press "Save to X Configuration File".
-
-## Misc configuration
-
-```bash
-sudo apt remove unattended-upgrades
-sudo dpkg-reconfigure console-setup
-sudo apt install dict-gcide
-```
-
-To prevent crashes on Intel integrated gpu:
-
-```bash
-MESA_LOADER_DRIVER_OVERRIDE=i965 blender
-MESA_LOADER_DRIVER_OVERRIDE=i965 DRI_PRIME=0 godot
-```
