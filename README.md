@@ -13,6 +13,7 @@ Programs and configs for my POSIX environment.
 sudo dpkg-reconfigure console-setup
 sudo apt install dict-gcide
 sudo apt remove unattended-upgrades
+sudo vim /etc/fstab  # Comment out swap
 ```
 
 ## NVIDIA dedicated graphics
