@@ -74,5 +74,12 @@
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "go.survey.prompt": false,
+  "gopls": {
+    "linksInHover": false
   }
 }
