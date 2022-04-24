@@ -7,4 +7,4 @@ xset s noblank     # don't blank the video device
 
 sct 3500
 
-exec dbus-run-session /etc/alternatives/x-window-manager
+exec /etc/alternatives/x-window-manager
