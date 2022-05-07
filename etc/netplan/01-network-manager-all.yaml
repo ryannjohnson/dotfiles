@@ -1,0 +1,15 @@
+# This prevents the loopback device from being
+# managed by NetworkManager, allowing tools like
+# `dict` to reach services offline.
+#
+# https://askubuntu.com/a/1134244/713087
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    lo:
+      renderer: networkd
+      match:
+        name: lo
+      addresses:
+        - 127.0.0.1/8
