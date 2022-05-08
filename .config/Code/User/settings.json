@@ -79,5 +79,6 @@
   "gopls": {
     "linksInHover": false
   },
+  "editor.bracketPairColorization.enabled": false,
   "editor.guides.indentation": false
 }
