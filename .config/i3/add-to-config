@@ -15,6 +15,10 @@ client.focused_inactive "#333333" "#333333" "#888888" "#444444" "#222222"
 bindsym XF86MonBrightnessUp exec brightness+
 bindsym XF86MonBrightnessDown exec brightness-
 
+# Add more granular volume control; 10% steps already exist
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
+
 # Screen locking
 bindsym $mod+Shift+a exec ~/.config/i3/lock.sh
 bindsym $mod+Shift+Delete exec ~/.config/i3/suspend.sh
