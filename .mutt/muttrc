@@ -1,7 +1,13 @@
+# Decrypt password on mutt start. One step better than
+# storing in plaintext.
+#
+# To save password, run `gpg` against it into this location.
+set my_pass = "`gpg --quiet --for-your-eyes-only -d ~/.mutt/pass.gpg`"
+
 set ssl_starttls=yes
 set ssl_force_tls=yes
 set imap_user = 'user@domain.tld'
-set imap_pass = ''
+set imap_pass = '$my_pass'
 set from = 'user@domain.tld'
 set realname = 'John Smith'
 set folder = 'imaps://mail.domain.tld/'
@@ -12,7 +18,7 @@ set header_cache = '~/.mutt/cache/headers'
 set message_cachedir = '~/.mutt/cache/bodies'
 set certificate_file = '~/.mutt/certificates'
 set smtp_url = 'smtp://user@domain.tld@mail.domain.tld:587/'
-set smtp_pass = "$imap_pass"
+set smtp_pass = "$my_pass"
 set move = no
 set imap_keepalive = 900
 

@@ -16,7 +16,7 @@ fileext = ".ics"
 type = "caldav"
 url = "https://url.to/dav/"
 username = "username"
-password = "password"
+password.fetch = ["command", "~/get-password.sh", "more", "args"]
 
 [pair my_contacts]
 a = "my_contacts_local"
@@ -33,4 +33,4 @@ fileext = ".vcf"
 type = "carddav"
 url = "https://url.to/dav/"
 username = "username"
-password = "password"
+password.fetch = ["command", "~/get-password.sh", "more", "args"]
