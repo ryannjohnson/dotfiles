@@ -12,7 +12,7 @@ Programs and configs for my POSIX environment.
 ```bash
 sudo dpkg-reconfigure console-setup
 sudo apt install dict-gcide
-sudo apt remove unattended-upgrades
+sudo systemctl enable unattended-upgrades
 sudo vim /etc/fstab  # Comment out swap
 ```
 
