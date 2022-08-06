@@ -24,4 +24,4 @@ au BufRead,BufReadPost,BufNewFile *.fountain,*.md setlocal columns=80
 au BufRead,BufReadPost,BufNewFile *.fountain,*.md autocmd VimResized * if (&columns > 80) | set columns=80 | endif
 
 au BufRead,BufReadPost,BufNewFile *.fountain setlocal filetype=fountain
-au BufRead,BufReadPost,BufNewFile *.md setlocal ai
+au BufRead,BufReadPost,BufNewFile *.md setlocal ai expandtab
