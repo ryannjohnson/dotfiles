@@ -12,7 +12,7 @@ set linebreak
 set showbreak=..
 
 " Display extra whitespace.
-set list listchars=tab:»·,trail:·,nbsp:·
+set list listchars=tab:»·,nbsp:·
 
 " Artificially limits the width of the window so that soft
 " wrapping isn't solely dependent on window width.
