@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Works around the cgroup error:
+#   /user.slice/user-1000.slice/session-1.scope is not a snap cgroup
+#
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1767183#c2
+env DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/bus snap run spotify
