@@ -2,7 +2,14 @@
 
 set -e
 
-SCREEN_DIMENSIONS=$(xrandr | grep '*' | awk '{print $1}')
+MAP_TO_OUTPUT="$1"
+if [[ -z "$MAP_TO_OUTPUT" ]]; then
+	# At least with nvidia drivers, we're able to identify "outputs"
+	# only in terms of the screen index.
+	MAP_TO_OUTPUT="HEAD-0"
+fi
+
+SCREEN_DIMENSIONS=$(xrandr | grep '*' | awk '{print $1}' | head -1)
 TARGET_WIDTH=$(echo $SCREEN_DIMENSIONS | awk -F'x' '{print $1}')
 TARGET_HEIGHT=$(echo $SCREEN_DIMENSIONS | awk -F'x' '{print $2}')
 
@@ -13,6 +20,7 @@ DEVICE_ID=$(
                 | awk -F": " '{print $2}'
 )
 
+xsetwacom --set "$DEVICE_ID" MapToOutput "$MAP_TO_OUTPUT"
 xsetwacom --set "$DEVICE_ID" ResetArea
 AREA=$(xsetwacom --get "$DEVICE_ID" Area)
 TABLET_WIDTH=$(echo $AREA | awk '{print $3}')
