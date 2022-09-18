@@ -103,7 +103,60 @@
          :map org-mode-map
          ("C-M-i" . completion-at-point))
   :config
-  ;; https://www.orgroam.com/manual.html#org_002droam_002dprotocol
-  (require 'org-roam-protocol)
   (org-roam-setup)
   (org-roam-db-autosync-mode))
+
+(require 'org-roam-export)
+;; https://www.orgroam.com/manual.html#org_002droam_002dprotocol
+(require 'org-roam-protocol)
+
+(defun collect-backlinks-string (backend)
+  (when (org-roam-node-at-point)
+    (let* ((source-node (org-roam-node-at-point))
+           (source-file (org-roam-node-file source-node))
+           (nodes-in-file (--filter (s-equals? (org-roam-node-file it) source-file)
+                                    (org-roam-node-list)))
+           (nodes-start-position (-map 'org-roam-node-point nodes-in-file))
+           ;; Nodes don't store the last position, so get the next headline position
+           ;; and subtract one character (or, if no next headline, get point-max)
+           (nodes-end-position (-map (lambda (nodes-start-position)
+                                       (goto-char nodes-start-position)
+                                       (if (org-before-first-heading-p) ;; file node
+                                           (point-max)
+                                         (call-interactively
+                                          'org-forward-heading-same-level)
+                                         (if (> (point) nodes-start-position)
+                                             (- (point) 1) ;; successfully found next
+                                           (point-max)))) ;; there was no next
+                                     nodes-start-position))
+           ;; sort in order of decreasing end position
+           (nodes-in-file-sorted (->> (-zip nodes-in-file nodes-end-position)
+                                      (--sort (> (cdr it) (cdr other))))))
+      (dolist (node-and-end nodes-in-file-sorted)
+        (-let (((node . end-position) node-and-end))
+          (when (org-roam-backlinks-get node)
+            (goto-char end-position)
+            ;; Add the references as a subtree of the node
+            (setq heading (format "\n\n%s References\n"
+                                  (s-repeat (+ (org-roam-node-level node) 1) "*")))
+            (insert heading)
+            (setq properties-drawer ":PROPERTIES:\n:HTML_CONTAINER_CLASS: references\n:END:\n")
+            (insert properties-drawer)
+            (dolist (backlink (org-roam-backlinks-get node))
+              (let* ((source-node (org-roam-backlink-source-node backlink))
+                     (properties (org-roam-backlink-properties backlink))
+                     (outline (when-let ((outline (plist-get properties :outline)))
+                                  (mapconcat #'org-link-display-format outline " > ")))
+                     (point (org-roam-backlink-point backlink))
+                     (text (s-replace "\n" " " (org-roam-preview-get-contents
+                                                (org-roam-node-file source-node)
+                                                point)))
+                     (reference (format "%s [[id:%s][%s]]\n%s\n%s\n\n"
+                                        (s-repeat (+ (org-roam-node-level node) 2) "*")
+                                        (org-roam-node-id source-node)
+                                        (org-roam-node-title source-node)
+                                        (if outline (format "%s (/%s/)"
+                                        (s-repeat (+ (org-roam-node-level node) 3) "*") outline) "")
+                                        text)))
+                (insert reference)))))))))
+(add-hook 'org-export-before-processing-hook 'collect-backlinks-string)

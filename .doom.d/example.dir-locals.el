@@ -9,11 +9,25 @@
 ;;
 ;; 1. Open emacs.
 ;; 2. Press "SPC ." then open a file in the new roam root.
-;; 3. (At least once) Press "M-x org-roam-db-sync" to create org-roam.db.
 
 ((nil . ((eval . (setq-local
                   org-roam-directory (expand-file-name (locate-dominating-file
                                                         default-directory ".dir-locals.el"))))
          (eval . (setq-local
                   org-roam-db-location (expand-file-name "org-roam.db"
-                                                         org-roam-directory))))))
+                                                         org-roam-directory)))
+         (eval . (setq-local
+                  org-roam-output-html (expand-file-name "output-html/"
+                                                         org-roam-directory)))
+         (eval . (setq-local org-publish-project-alist
+               `(("roam"
+                  :base-directory ,org-roam-directory
+                  :publishing-function org-html-publish-to-html
+                  :publishing-directory ,org-roam-output-html
+                  :section-numbers nil
+                  :with-author nil
+                  :with-toc nil
+                  :html-head "<link rel=\"stylesheet\"
+                             href=\"../other/mystyle.css\"
+                             type=\"text/css\"/>"))))
+         (eval . (org-roam-db-sync)))))
