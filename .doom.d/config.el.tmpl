@@ -94,8 +94,17 @@
   (setq org-roam-mode-sections
       '((org-roam-backlinks-section :unique t)
         org-roam-reflinks-section))
+  (setq org-publish-project-alist
+      '(("roam"
+         :base-directory "{{ROAM_DIR}}"
+         :publishing-function org-html-publish-to-html
+         :publishing-directory "{{ROAM_DIR}}/output-html"
+         :section-numbers nil
+         :with-author nil
+         :with-toc nil
+         :html-head "<link rel=\"stylesheet\" href=\"../other/mystyle.css\" type=\"text/css\"/>")))
   :custom
-  (org-roam-directory "~/org-roam")
+  (org-roam-directory "{{ROAM_DIR}}")
   (org-roam-completion-everywhere t)
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
@@ -103,12 +112,11 @@
          :map org-mode-map
          ("C-M-i" . completion-at-point))
   :config
-  (org-roam-setup)
+  ;; https://www.orgroam.com/manual.html#org_002droam_002dprotocol
+  (require 'org-roam-protocol)
+  (require 'org-roam-export)
   (org-roam-db-autosync-mode))
 
-(require 'org-roam-export)
-;; https://www.orgroam.com/manual.html#org_002droam_002dprotocol
-(require 'org-roam-protocol)
 
 (defun collect-backlinks-string (backend)
   (when (org-roam-node-at-point)
