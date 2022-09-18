@@ -75,6 +75,13 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;; CUSTOM IN GENERAL
+;; https://www.victorquinn.com/emacs-prevent-autosave-mess
+;; http://xahlee.info/emacs/emacs/emacs_set_backup_into_a_directory.html
+(setq auto-save-default nil)
+;; Enables local variables.
+(setq-default enable-local-variables t)
+
 ;; CUSTOM FOR ORG-ROAM
 ;; https://youtu.be/AyhPmypHDEw?t=1244
 (use-package org-roam
@@ -93,7 +100,7 @@
          :map org-mode-map
          ("C-M-i" . completion-at-point))
   :config
+  ;; https://www.orgroam.com/manual.html#org_002droam_002dprotocol
   (require 'org-roam-protocol)
   (org-roam-setup)
   (org-roam-db-autosync-mode))
-;; https://www.orgroam.com/manual.html#org_002droam_002dprotocol
