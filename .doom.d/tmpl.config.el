@@ -157,7 +157,7 @@
             (insert heading)
             (setq properties-drawer ":PROPERTIES:\n:HTML_CONTAINER_CLASS: references\n:END:\n")
             (insert properties-drawer)
-            (dolist (backlink (org-roam-backlinks-get node))
+            (dolist (backlink (org-roam-backlinks-get node :unique t))
               (let* ((source-node (org-roam-backlink-source-node backlink))
                      (properties (org-roam-backlink-properties backlink))
                      (outline (when-let ((outline (plist-get properties :outline)))
