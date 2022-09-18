@@ -16,5 +16,4 @@
                                                         default-directory ".dir-locals.el"))))
          (eval . (setq-local
                   org-roam-db-location (expand-file-name "org-roam.db"
-                                                         org-roam-directory)))
-         (eval . (org-roam-db-sync)))))
+                                                         org-roam-directory))))))

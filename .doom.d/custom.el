@@ -4,7 +4,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(safe-local-variable-values
-   '((eval setq-local org-roam-db-location
+   '((eval org-roam-db-sync)
+     (eval setq-local org-roam-db-location
       (expand-file-name "org-roam.db" org-roam-directory))
      (eval setq-local org-roam-directory
       (expand-file-name

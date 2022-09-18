@@ -91,6 +91,9 @@
   ;; https://www.reddit.com/r/OrgRoam/comments/x12sl6/comment/imdzvwz/
   (setq org-fold-core-style "overlays")
   (setq org-roam-v2-ack t)
+  (setq org-roam-mode-sections
+      '((org-roam-backlinks-section :unique t)
+        org-roam-reflinks-section))
   :custom
   (org-roam-directory "~/org-roam")
   (org-roam-completion-everywhere t)
