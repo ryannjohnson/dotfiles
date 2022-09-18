@@ -17,5 +17,5 @@ if [[ -z "$ROAM_DIR" ]]; then
 	echo "Required: must provide path to roam directory." >&2
 fi
 
-cp config.el.tmpl config.el
+cp tmpl.config.el config.el
 sed -i "s|{{ROAM_DIR}}|$ROAM_DIR|g" config.el

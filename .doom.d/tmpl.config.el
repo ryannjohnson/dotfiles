@@ -80,7 +80,10 @@
 ;; http://xahlee.info/emacs/emacs/emacs_set_backup_into_a_directory.html
 (setq auto-save-default nil)
 ;; Enables local variables.
-(setq-default enable-local-variables t)
+;;(setq-default enable-local-variables t)
+;; Disables trailing timestamp, etc on publishes.
+;; https://orgmode.org/manual/HTML-preamble-and-postamble.html
+(setq org-html-postamble nil)
 
 ;; CUSTOM FOR ORG-ROAM
 ;; https://youtu.be/AyhPmypHDEw?t=1244
@@ -96,13 +99,16 @@
         org-roam-reflinks-section))
   (setq org-publish-project-alist
       '(("roam"
+         :auto-sitemap t
+         :sitemap-filename "index.org"
+         :sitemap-title "Index"
          :base-directory "{{ROAM_DIR}}"
          :publishing-function org-html-publish-to-html
          :publishing-directory "{{ROAM_DIR}}/output-html"
          :section-numbers nil
          :with-author nil
          :with-toc nil
-         :html-head "<link rel=\"stylesheet\" href=\"../other/mystyle.css\" type=\"text/css\"/>")))
+         :html-head "<link rel=\"stylesheet\" href=\"./style.css\" type=\"text/css\"/>")))
   :custom
   (org-roam-directory "{{ROAM_DIR}}")
   (org-roam-completion-everywhere t)
@@ -114,10 +120,11 @@
   :config
   ;; https://www.orgroam.com/manual.html#org_002droam_002dprotocol
   (require 'org-roam-protocol)
+  ;; Adds support for roam nodes as links.
   (require 'org-roam-export)
   (org-roam-db-autosync-mode))
 
-
+;; https://org-roam.discourse.group/t/export-backlinks-on-org-export/1756/21
 (defun collect-backlinks-string (backend)
   (when (org-roam-node-at-point)
     (let* ((source-node (org-roam-node-at-point))
