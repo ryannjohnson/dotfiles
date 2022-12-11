@@ -11,7 +11,7 @@ set -e
 
 ROAM_DIR="$1"
 if [[ -z "$ROAM_DIR" ]]; then
-	read -p "Roam directory [~/path/to/roam]: " $ROAM_DIR
+	read -p "Roam directory [~/path/to/roam]: " ROAM_DIR
 fi
 if [[ -z "$ROAM_DIR" ]]; then
 	echo "Required: must provide path to roam directory." >&2

@@ -79,6 +79,9 @@
 ;; https://www.victorquinn.com/emacs-prevent-autosave-mess
 ;; http://xahlee.info/emacs/emacs/emacs_set_backup_into_a_directory.html
 (setq auto-save-default nil)
+;; Disables automatic pairings of quotes, parentheses, etc.
+;; https://github.com/doomemacs/doomemacs/blob/3b789752a30419535b328c605957b6b43a9d47fa/docs/faq.org#how-to-disable-smartparensautomatic-parentheses-completion
+(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 
 ;; CUSTOM FOR ORG-ROAM
 ;; https://youtu.be/AyhPmypHDEw?t=1244
