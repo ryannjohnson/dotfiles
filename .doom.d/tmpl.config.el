@@ -79,11 +79,6 @@
 ;; https://www.victorquinn.com/emacs-prevent-autosave-mess
 ;; http://xahlee.info/emacs/emacs/emacs_set_backup_into_a_directory.html
 (setq auto-save-default nil)
-;; Enables local variables.
-;;(setq-default enable-local-variables t)
-;; Disables trailing timestamp, etc on publishes.
-;; https://orgmode.org/manual/HTML-preamble-and-postamble.html
-(setq org-html-postamble nil)
 
 ;; CUSTOM FOR ORG-ROAM
 ;; https://youtu.be/AyhPmypHDEw?t=1244
